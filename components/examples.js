@@ -2,7 +2,7 @@ import { useSelector, shallowEqual } from 'react-redux'
 import Clock from './clock'
 import Counter from './counter'
 import { PLAYERS_PATH } from '../config/config'
-import Link from 'next/link'
+import { Link } from '../routes'
 
 const clockSelector = state => ({
   lastUpdate: state.lastUpdate,
@@ -17,7 +17,7 @@ function Examples () {
   const { lastUpdate, light } = useSelector(clockSelector, shallowEqual)
   return (
     <div>
-      <Link href='/player'>
+      <Link route='player' params={{ player: 'jasson' }}>
         <a>About Page</a>
       </Link>
       <Clock lastUpdate={lastUpdate} light={light} />
