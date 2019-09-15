@@ -1,7 +1,6 @@
 import { useSelector, shallowEqual } from 'react-redux'
 import Clock from './clock'
 import Counter from './counter'
-import { PLAYERS_PATH } from '../config/config'
 import { Link } from '../routes'
 
 const clockSelector = state => ({
@@ -9,8 +8,7 @@ const clockSelector = state => ({
   light: state.light
 })
 
-const playersPaths = PLAYERS_PATH
-const dataPlayers = require(`../${playersPaths}`)
+const dataPlayers = require('../src/json/players.json')
 console.log(dataPlayers)
 
 function Examples () {
@@ -18,7 +16,7 @@ function Examples () {
   return (
     <div>
       <Link route='player' params={{ player: 'jasson' }}>
-        <a>About Page</a>
+        <a>link</a>
       </Link>
       <Clock lastUpdate={lastUpdate} light={light} />
       <Counter />
