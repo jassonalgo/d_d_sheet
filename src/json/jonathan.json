@@ -1,0 +1,85 @@
+{
+  "data":{
+    "user": "Jonathan",
+    "userName": "Tatan",
+    "characters":[
+      {
+        "name": "Drake",
+        "hitPoint": 55,
+        "iniciative": {
+          "others": 1
+        },
+        "armorClass": {
+          "armor": 2
+        },
+        "info":{
+          "class": "Batidor",
+          "race": "Cambiante",
+          "Alineamiento": "Neutral / Caotico"
+        },
+        "characteristics":{
+          "strength": 18,
+          "dexterity": 25,
+          "constitution": 14,
+          "intelligence": 12,
+          "wisdom": 10,
+          "charisma": 10
+        },
+        "salvation":{
+          "fortitude":{
+            "base":2
+          },
+          "reflex":{
+            "base":5
+          },
+          "will":{
+            "base":2
+          }
+        },
+        "skills":{
+          "oneUse":[
+            {
+              "name": "Cazador",
+              "description": "se concentra en un objetivo para mejorar daño y ataque",
+              "condition": "una vez al dia",
+              "effects":[
+                {
+                  "name": "concentracion",
+                  "description": "por cada turno donde apunte a un oponente (solo apuntar no hacer mas) incrementa ataque y daño en +1/+1 maximo el nivel"
+                }
+              ]
+            }
+          ],
+          "tree":[
+            {
+              "name": "multiobjetivo",
+              "description": "especialista en atacar varios objetivos simultaneamente",
+              "condition": "al atacar a un oponente diferente gana un punto que puede ser gastado en las habilidades",
+              "levels":{
+                "1":[
+                  {
+                    "name": "mejorar ataque",
+                    "description": " se puede gastar maximo 1 punto para mejorar el ataque en +1 en la siguiente tirada",
+                    "sublevel": 1
+                  },
+                  {
+                    "name": "mejorar daño",
+                    "description": " se puede gastar maximo 2 punto para mejorar el ataque en +2 en la siguiente tirada",
+                    "sublevel": 2
+                  }
+                ],
+                "2":[
+                  {
+                    "name": "rencor",
+                    "description": "al atacar por primera vez a un nuevo enemigo puede agregar daño segun la cantidda de enemigos golpeados previamente max 3 gasta 2",
+                    "sublevel": 1
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }      
+    ]
+  }
+}

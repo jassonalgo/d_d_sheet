@@ -1,0 +1,77 @@
+{
+  "data":{
+    "user": "Michell",
+    "userName": "michelin",
+    "characters":[
+      {
+        "name": "Nigthbold wulf",
+        "hitPoint": 40,
+        "iniciative": {},
+        "armorClass": {
+          "armor": 4,
+          "shield": 2
+        },
+        "info":{
+          "class": "Clerigo",
+          "race": "Humano",
+          "Alineamiento": "Maligno / Legal"
+        },
+        "characteristics":{
+          "strength": 16,
+          "dexterity": 12,
+          "constitution": 12,
+          "intelligence": 12,
+          "wisdom": 20,
+          "charisma": 16
+        },
+        "salvation":{
+          "fortitude":{
+            "base":5
+          },
+          "reflex":{
+            "base":2
+          },
+          "will":{
+            "base":5
+          }
+        },
+        "skills":{
+          "oneUse":[
+            {
+              "name": "Aura de muerte",
+              "description": "Emana energia maliga alrededor",
+              "condition": "una vez al dia",
+              "effects":[
+                {
+                  "name": "Emanacion",
+                  "description": "emana energia negativa a 5' que casua 1d8 de daño"
+                }
+              ]
+            }
+          ],
+          "tree":[
+            {
+              "name": "maniofestar corrupcion",
+              "description": "permite mejorar las invocaciones",
+              "condition": "cuando una invocacion ataca gana 1 punto(max uno por asalto) ",
+              "levels":{
+                "1":[
+                  {
+                    "name": "mejorar velocidad",
+                    "description": "gasta 1 para que una invocacion tenga +10' por un asalto",
+                    "sublevel": 1
+                  },
+                  {
+                    "name": "mejorar vida",
+                    "description": " gasta 5 para que una nueva invoacion salga con +10 de vida",
+                    "sublevel": 1
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }      
+    ]
+  }
+}

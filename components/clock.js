@@ -14,7 +14,8 @@ export default ({ lastUpdate, light }) => {
         .light {
           background-color: #999;
         }
-      `}</style>
+      `}
+      </style>
     </div>
   )
 }

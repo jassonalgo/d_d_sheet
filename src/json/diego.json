@@ -1,0 +1,86 @@
+{
+  "data":{
+    "user": "Diego",
+    "userName": "Alod",
+    "characters":[
+      {
+        "name": "Nigthbold wulf",
+        "hitPoint": 40,
+        "iniciative": {},
+        "armorClass": {
+          "armor": 4,
+          "shield": 2
+        },
+        "info":{
+          "class": "Clerigo",
+          "race": "Humano",
+          "Alineamiento": "Maligno / Legal"
+        },
+        "characteristics":{
+          "strength": 16,
+          "dexterity": 12,
+          "constitution": 12,
+          "intelligence": 12,
+          "wisdom": 20,
+          "charisma": 16
+        },
+        "salvation":{
+          "fortitude":{
+            "base":5
+          },
+          "reflex":{
+            "base":2
+          },
+          "will":{
+            "base":5
+          }
+        },
+        "skills":{
+          "oneUse":[
+            {
+              "name": "Egida",
+              "description": "Habilidad defensiva que permite mitigar daño",
+              "condition": "una vez al dia",
+              "effects":[
+                {
+                  "name": "uso propio",
+                  "description": "se puede reducir el daño a la mitad despues del lanzamiento de los dados"
+                },
+                {
+                  "name": "uso en aliados",
+                  "description": "Reduce el daño de un aliado con una ts de voluntad (mia) por un valor de 2 de daño * 1 de voluntad"
+                }
+              ]
+            }
+          ],
+          "tree":[
+            {
+              "name": "Senderro terrenal",
+              "description": "@todo",
+              "condition": "al atacar sin arma se gana 1d4 de puntos que se pueden gastar en alguna habilidad",
+              "levels":{
+                "1":[
+                  {
+                    "name": "mejorar daño",
+                    "description": " se puede gastar 4 puntos para mejorar el daño en +1",
+                    "sublevel": 1
+                  },
+                  {
+                    "name": "mejorar ataque",
+                    "description": " se puede gastar 6 puntos para mejorar el ataque en +1",
+                    "sublevel": 1
+                  },
+                  {
+                    "name": "mejorar CA",
+                    "description": " se puede gastar 12 puntos para mejorar el CA en +1",
+                    "sublevel": 1
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }      
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "data":{
+    "user": "Juaquin",
+    "userName": "Juaco",
+    "characters":[
+      {
+        "name": "Ulfir",
+        "hitPoint": 99,
+        "iniciative": {},
+        "armorClass": {
+          "armor": 6
+        },
+        "info":{
+          "class": "Barbaro",
+          "race": "Semi orco",
+          "Alineamiento": "Neutral / Caotico"
+        },
+        "characteristics":{
+          "strength": 25,
+          "dexterity": 16,
+          "constitution": 20,
+          "intelligence": 12,
+          "wisdom": 112,
+          "charisma": 9
+        },
+        "salvation":{
+          "fortitude":{
+            "base":5
+          },
+          "reflex":{
+            "base":2
+          },
+          "will":{
+            "base":2
+          }
+        },
+        "skills":{
+          "oneUse":[
+            {
+              "name": "grito aturdidor",
+              "description": "grita y atemoriza a quienes lo escuchen",
+              "condition": "una vez al dia alcance 30'",
+              "effects":[
+                {
+                  "name": "grito",
+                  "description": "quienes escuchen deben superar con voluntad 10 + nivel"
+                }
+              ]
+            }
+          ],
+          "tree":[
+            {
+              "name": "Periodo",
+              "description": "Gana cosas al perder vida",
+              "condition": "al recibir daño, agrega como puntos el daño sufrido",
+              "levels":{
+                "1":[
+                  {
+                    "name": "regeneracion",
+                    "description": " se puede gastar 16 puntos para curar 1d8 cade 6 turnos",
+                    "extra": "enfriamiento 1",
+                    "sublevel": 2
+                  },
+                  {
+                    "name": "mejorar daño",
+                    "description": " se puede gastar maximo 2 punto para mejorar el ataque en +2 en la siguiente tirada",
+                    "sublevel": 2
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }      
+    ]
+  }
+}
