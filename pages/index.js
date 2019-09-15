@@ -2,14 +2,30 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { startClock, serverRenderClock } from '../store'
 import Examples from '../components/examples'
+import axios from 'axios'
 
 class Index extends React.Component {
-  static getInitialProps ({ reduxStore, req }) {
+  static async getInitialProps ({ reduxStore, req }) {
+    console.log('aca')
     const isServer = !!req
     // DISPATCH ACTIONS HERE ONLY WITH `reduxStore.dispatch`
     reduxStore.dispatch(serverRenderClock(isServer))
 
-    return {}
+    // res is assigned the response once the axios
+    // async get is completed
+    const url = 'https://api.myjson.com/bins/1d93zh'
+    const test = await axios.get(url).then(resp => {
+      // se dispara redux al obtener data del servicio
+      console.log('funciona', resp.data)
+      return { data: resp.data }
+    }).catch(err => {
+      // se dispara redux en caso de no poder obtener la informacion del beneficio
+      console.log('no funciona', err)
+      return { data: err }
+    })
+    // Return properties
+    console.log('valro de axios', test)
+    return { data: test }
   }
 
   componentDidMount () {
@@ -23,6 +39,7 @@ class Index extends React.Component {
   }
 
   render () {
+    console.log('valorde props', this.props)
     return <Examples />
   }
 }

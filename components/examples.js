@@ -8,8 +8,8 @@ const clockSelector = state => ({
   light: state.light
 })
 
-const dataPlayers = require('../src/json/players.json')
-console.log(dataPlayers)
+// const dataPlayers = require('../src/json/players.json')
+// console.log(dataPlayers)
 
 function Examples () {
   const { lastUpdate, light } = useSelector(clockSelector, shallowEqual)
