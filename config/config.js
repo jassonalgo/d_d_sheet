@@ -3,6 +3,4 @@
  * @author jasson algo
  */
 
-export const SOURCE_PATH = 'src'
-export const JSON_PATH = `${SOURCE_PATH}/json`
-export const PLAYERS_PATH = `${JSON_PATH}/players.json`
+export const PLAYERS_PATH = 'https://api.myjson.com/bins/fmvjl'
