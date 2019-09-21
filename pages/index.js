@@ -1,16 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { startClock, serverRenderClock } from '../store'
-import Examples from '../components/examples'
 import { PLAYERS_PATH } from '../config/config'
 import axios from 'axios'
 
 class Index extends React.Component {
   static async getInitialProps ({ reduxStore, req }) {
-    const isServer = !!req
-    // DISPATCH ACTIONS HERE ONLY WITH `reduxStore.dispatch`
-    reduxStore.dispatch(serverRenderClock(isServer))
-
     // res is assigned the response once the axios
     // async get is completed
     const url = PLAYERS_PATH
@@ -27,23 +21,15 @@ class Index extends React.Component {
     return { data: test }
   }
 
-  componentDidMount () {
-    // DISPATCH ACTIONS HERE FROM `mapDispatchToProps`
-    // TO TICK THE CLOCK
-    this.timer = setInterval(() => this.props.startClock(), 1000)
-  }
-
-  componentWillUnmount () {
-    clearInterval(this.timer)
-  }
-
   render () {
     console.log('valorde props', this.props)
-    return <Examples />
+    return (
+      <div>acaaa</div>
+    )
   }
 }
-const mapDispatchToProps = { startClock }
+
 export default connect(
   null,
-  mapDispatchToProps
+  null
 )(Index)
