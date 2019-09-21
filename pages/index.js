@@ -10,11 +10,11 @@ class Index extends React.Component {
     const url = PLAYERS_PATH
     const test = await axios.get(url).then(resp => {
       // se dispara redux al obtener data del servicio
-      console.log('funciona', resp.data)
+      // console.log('funciona', resp.data)
       return { data: resp.data }
     }).catch(err => {
       // se dispara redux en caso de no poder obtener la informacion del beneficio
-      console.log('no funciona', err)
+      // console.log('no funciona', err)
       return { data: err }
     })
     // Return properties
@@ -22,14 +22,19 @@ class Index extends React.Component {
   }
 
   render () {
-    console.log('valorde props', this.props)
     return (
       <div>acaaa</div>
     )
   }
 }
 
+function mapStateToProps (state, props) {
+  return {
+    players: state.players
+  }
+}
+
 export default connect(
-  null,
+  mapStateToProps,
   null
 )(Index)
