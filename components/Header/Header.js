@@ -3,13 +3,17 @@
  * @author jasson algo
  */
 
-import { Component } from 'react'
+import { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
+import Menu from '../Menu/Menu'
 
 class Header extends Component {
   render () {
     return (
-      <div> aca header</div>
+      <>
+        <div> aca header</div>
+        <Menu />
+      </>
     )
   }
 }
