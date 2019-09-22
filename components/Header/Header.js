@@ -3,7 +3,7 @@
  * @author jasson algo
  */
 
-import { Component, Fragment } from 'react'
+import { Component } from 'react'
 import { connect } from 'react-redux'
 import Menu from '../Menu/Menu'
 
@@ -11,7 +11,7 @@ class Header extends Component {
   render () {
     return (
       <>
-        <div> aca header</div>
+        <div> aca header de mesa de rol d&d</div>
         <Menu />
       </>
     )

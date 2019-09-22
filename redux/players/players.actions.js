@@ -7,7 +7,10 @@ import { SHOW_PLAYERS, SHOW_PLAYERS_ERROR } from './players.constrants'
 import { PLAYERS_PATH } from '../../config/config'
 import axios from 'axios'
 
-export function showPlayersAction (query) {
+/**
+ *
+ */
+export function showPlayersAction () {
   return (dispatch) => {
     return axios.get(PLAYERS_PATH, {
       headers: {

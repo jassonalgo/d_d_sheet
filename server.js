@@ -1,3 +1,6 @@
+/**
+ * archivo encargado del render del lado del servidor
+ */
 // server.js
 const next = require('next')
 const routes = require('./routes')

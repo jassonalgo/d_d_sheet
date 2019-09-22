@@ -6,6 +6,7 @@
 import { combineReducers } from 'redux'
 import { playersState } from './players/players.reducer'
 
+// se combinan reducers
 const rootReducer = combineReducers({
   players: playersState
 })

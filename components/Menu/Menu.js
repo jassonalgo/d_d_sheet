@@ -3,7 +3,7 @@
  * @author jasson algo
  */
 
-import { Component, Fragment } from 'react'
+import { Component } from 'react'
 import { connect } from 'react-redux'
 import { MenuItem } from './MenuItem'
 
