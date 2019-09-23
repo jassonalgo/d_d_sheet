@@ -7,9 +7,12 @@ import { Component } from 'react'
 
 export class MenuItem extends Component {
   render () {
-    const { name } = this.props
+    const { name, onclick, position } = this.props
     return (
-      <li>{name}</li>
+      <span onClick={() =>
+        onclick(position)}
+      >{name}-
+      </span>
     )
   }
 }

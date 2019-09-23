@@ -6,8 +6,16 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { MenuItem } from './MenuItem'
+import {updateCurrentPlayer} from '../../redux/characters/character.actions'
 
 class Menu extends Component {
+
+  getCharacters = (position) =>{
+    const { players, updateCurrentPlayerProp } = this.props
+    let urlPlayercharacters = players.players[position].name
+    updateCurrentPlayerProp(urlPlayercharacters)
+    console.log('aca', urlPlayercharacters)
+  }
   render () {
     const { players } = this.props
 
@@ -20,13 +28,13 @@ class Menu extends Component {
     if (players.showPlayers === true && Array.isArray(players.players)) {
       const listItems = players.players.map((element, index) =>
       // Mal! La key debería haber sido especificada aquí:
-        <MenuItem name={element.name} key={index} />
+        <MenuItem name={element.name} key={index} onclick = {this.getCharacters} position={index}/>
       )
       return (
-        <ul>
+        <div>
           {listItems}
 
-        </ul>
+        </div>
       )
     }
 
@@ -44,4 +52,14 @@ function mapStateToProps (state, props) {
   }
 }
 
-export default connect(mapStateToProps, null)(Menu)
+function mapDispatchToProps (dispatch) {
+  console.log('en mapdispatch')
+  return {
+    updateCurrentPlayerProp: (player) => {
+      console.log('en otro mapdispatch')
+      dispatch(updateCurrentPlayer(player))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menu)

@@ -6,6 +6,7 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import Menu from '../Menu/Menu'
+import Character from '../Character/Character'
 
 class Header extends Component {
   render () {
@@ -13,6 +14,7 @@ class Header extends Component {
       <>
         <div> aca header de mesa de rol d&d</div>
         <Menu />
+        <Character />
       </>
     )
   }
