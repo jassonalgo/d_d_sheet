@@ -6,15 +6,22 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { MenuItem } from './MenuItem'
-import {updateCurrentPlayer} from '../../redux/characters/character.actions'
+import {updateCurrentPlayer, addCharacterAction} from '../../redux/characters/character.actions'
 
 class Menu extends Component {
 
   getCharacters = (position) =>{
-    const { players, updateCurrentPlayerProp } = this.props
-    let urlPlayercharacters = players.players[position].name
-    updateCurrentPlayerProp(urlPlayercharacters)
-    console.log('aca', urlPlayercharacters)
+    const { players, updateCurrentPlayerProp, charactersList, addCharacter } = this.props
+    let playerName = players.players[position].name
+    updateCurrentPlayerProp(playerName)
+    console.log('aca', playerName)
+    //se busca si hay personajes del jugador
+    if(!charactersList.characters.hasOwnProperty(playerName)){
+      addCharacter(players.players[position].file)
+      console.log('no tiene')
+    }else{
+      console.log('tiene')
+    }
   }
   render () {
     const { players } = this.props
@@ -48,7 +55,8 @@ class Menu extends Component {
 
 function mapStateToProps (state, props) {
   return {
-    players: state.players
+    players: state.players,
+    charactersList: state.charactersList
   }
 }
 
@@ -58,7 +66,8 @@ function mapDispatchToProps (dispatch) {
     updateCurrentPlayerProp: (player) => {
       console.log('en otro mapdispatch')
       dispatch(updateCurrentPlayer(player))
-    }
+    },
+    addCharacter: (url) => dispatch(addCharacterAction(url))
   }
 }
 

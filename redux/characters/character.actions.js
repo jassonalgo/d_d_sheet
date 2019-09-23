@@ -16,7 +16,11 @@ export function addCharacterAction (url) {
         Accept: 'application/json'
       }
     }).then(resp => {
-      dispatch({ type: ADD_CHARACTER, payload: resp.data.data })
+      const characters = {
+        [resp.data.data.user]: resp.data.data
+      }
+
+      dispatch({ type: ADD_CHARACTER, payload: characters })
       return { statuscode: true }
     }).catch(err => {
       dispatch({ type: ADD_CHARACTER_ERROR, payload: err.data })

@@ -7,19 +7,26 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 
 class Character extends Component {
-  componentDidUpdate () {
+
+  capitalize = (s) => {
+    if (typeof s !== 'string') return ''
+    return s.charAt(0).toUpperCase() + s.slice(1)
+  }
+  
+  render () {
+    let characters = ''
     const { charactersList } = this.props
     if (charactersList.currentPlayer !== '') {
-
+      console.log('player')
+      if (charactersList.characters.hasOwnProperty(this.capitalize(charactersList.currentPlayer))) {
+        const current = charactersList.currentPlayer
+        characters = charactersList.characters[this.capitalize(current)].characters[0].name
+        console.log('redner personajes', characters)
+      }
     }
-  }
-
-  render () {
-    const { charactersList } = this.props
-
     if (charactersList.currentPlayer !== '') {
       return (
-        <div>personajes dispnibles para {charactersList.currentPlayer}</div>
+        <div>personajes dispnibles para {charactersList.currentPlayer} {characters}</div>
       )
     }
 
