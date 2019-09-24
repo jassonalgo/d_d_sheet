@@ -9,10 +9,12 @@ export class MenuItem extends Component {
   render () {
     const { name, onclick, position } = this.props
     return (
-      <span onClick={() =>
-        onclick(position)}
-      >{name}-
-      </span>
+      <a
+        onClick={() =>
+          onclick(position)}
+        href='#'
+      > {name}
+      </a>
     )
   }
 }

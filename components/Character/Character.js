@@ -5,6 +5,7 @@
 
 import { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from '../../routes'
 
 class Character extends Component {
 
@@ -24,9 +25,16 @@ class Character extends Component {
         console.log('redner personajes', characters)
       }
     }
-    if (charactersList.currentPlayer !== '') {
+    if (charactersList.currentPlayer !== '' && charactersList.characters.hasOwnProperty(this.capitalize(charactersList.currentPlayer))) {
       return (
-        <div>personajes dispnibles para {charactersList.currentPlayer} {characters}</div>
+        <>
+        <div>personajes dispnibles para {charactersList.currentPlayer} </div>
+        <Link route='character' params={{ player:charactersList.currentPlayer, character:characters }}>
+          <a>          
+            {characters}
+          </a>
+        </Link>
+        </>
       )
     }
 
