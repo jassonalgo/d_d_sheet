@@ -15,6 +15,7 @@ class Player extends React.Component {
     const { query, charactersList } = this.props
     let currentPlayer = {}
     let currentCharacter = {}
+    
     // se valida que juigador sea valido
     if (!charactersList.characters.hasOwnProperty(this.capitalize(query.player))) {
       return (
@@ -32,6 +33,7 @@ class Player extends React.Component {
 
     currentPlayer = charactersList.characters[this.capitalize(query.player)]
     currentCharacter = currentPlayer.characters[0]
+    let currentCharacterSkills = currentCharacter.skills
     console.log(currentCharacter)
     return (
       <>
@@ -50,6 +52,24 @@ class Player extends React.Component {
       <div className='aca'>fortaleza: {currentCharacter.salvation.fortitude.base}</div>
       <div className='aca'>reflejos: {currentCharacter.salvation.reflex.base}</div>
       <div className='aca'>voluntad: {currentCharacter.salvation.will.base}</div>
+      <div>habilidades</div>
+      <div>un uso</div>
+      <div className='aca'>nombre: {currentCharacter.skills.oneUse.name}</div>
+      <div className='aca'>descripcion: {currentCharacter.skills.oneUse.description}</div>
+      <div className='aca'>condicion: {currentCharacter.skills.oneUse.condition}</div>
+      <div>efectos</div>
+      <div className='aca'>nombre: {currentCharacter.skills.oneUse[0].effects[0].name}</div>
+      <div className='aca'>descripcion: {currentCharacter.skills.oneUse[0].effects[0].description}</div>
+      <div>+</div>
+      <div>+</div>
+      <div>+</div>
+      <div>Tree</div>
+      <div className='aca'>nombre: {currentCharacter.skills.tree[0].name}</div>
+      <div className='aca'>descripcion: {currentCharacter.skills.tree[0].description}</div>
+      <div className='aca'>condicion: {currentCharacter.skills.tree[0].condition}</div>
+      <div>lvl1</div>
+      <div className='aca'>nombre: {currentCharacter.skills.tree[0].levels[1][0].name}</div>
+      <div className='aca'>descripcion: {currentCharacter.skills.tree[0].levels[1][0].description}</div>
       </>
     )
   }
